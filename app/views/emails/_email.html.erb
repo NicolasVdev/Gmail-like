@@ -1,0 +1,5 @@
+<tr>
+  <td><%= email.object %></td>
+  <td><%= link_to "voir le contenu", email_path(email), data: {turbo_frame: "read_email"} %></td>
+  <td><%= email.read ? 'Lu' : 'Non lu' %></td>
+</tr>

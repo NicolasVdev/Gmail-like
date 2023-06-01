@@ -1,0 +1,17 @@
+<%= turbo_frame_tag "read_email" do %>
+  <table>
+    <thead>
+      <tr>
+        <th>Objet</th>
+        <th>Contenu</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= @email.object %></td>
+        <td><%= @email.body %></td>
+        <td><%= button_to "Supprimer", @email, data: {turbo_frame: "delete_email"}, method: :delete %></td>
+      </tr>
+    </tbody>
+  </table>
+<% end %>

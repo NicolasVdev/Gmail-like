@@ -1,0 +1,23 @@
+<div class="container">
+<%= turbo_frame_tag "new_email" do %>
+  <table>
+    <thead>
+      <tr>
+        <th>Objet</th>
+        <th>Contenu</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @emails.sort.reverse_each do |email| %>
+        <%= render 'email', email: email %>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
+<%= turbo_frame_tag "read_email" do %>
+<% end %>
+</div>
+
+
+<center> <%= button_to "Recevoir un email", emails_path, data: {turbo_frame: "new_email"} %> </center>
